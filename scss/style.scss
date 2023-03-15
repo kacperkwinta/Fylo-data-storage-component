@@ -24,7 +24,7 @@ body {
 
 	background-color: var(--color-neutral-4);
 	background-image: url(../images/bg-desktop.png);
-	background-position: bottom;
+	background-position-y: 110%;
 	background-repeat: no-repeat;
 	background-size: 100%;
 }
@@ -39,11 +39,63 @@ main {
 
 .container {
 	display: flex;
-	border: 1px solid pink;
+	gap: 2.4rem;
 }
 
 .box-actions {
+	background-color: var(--color-neutral-3);
+	padding: 3.2rem;
+	border-radius: 1rem;
+	border-top-right-radius: 10rem;
+	padding-right: 12.6rem;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+		rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+	> img {
+		margin-bottom: 2.4rem;
+	}
 }
 
+.wrapper {
+	display: flex;
+	gap: 1.6rem;
+}
+
+.icon-box {
+	height: 4.8rem;
+	width: 4.8rem;
+	border-radius: 1rem;
+	background-color: var(--color-neutral-4);
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: all 0.2s ease;
+
+	&:hover {
+		background-color: var(--color-neutral-1);
+	}
+
+	img {
+		transition: all 0.2s ease;
+	}
+
+	&:hover img {
+		transform: scale(1);
+	}
+}
+
+// SPACING SYSTEM (px)
+// 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+// FONT SIZE SYSTEM (px)
+// 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
 .box-storage {
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+		rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+	background-color: var(--color-neutral-3);
+	padding: 3.2rem;
+	border-radius: 1rem;
 }
