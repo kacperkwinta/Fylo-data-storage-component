@@ -21,6 +21,7 @@ html {
 
 body {
 	font-size: 1.4rem;
+	line-height: 1;
 
 	background-color: var(--color-neutral-4);
 	background-image: url(../images/bg-desktop.png);
@@ -98,4 +99,70 @@ main {
 	background-color: var(--color-neutral-3);
 	padding: 3.2rem;
 	border-radius: 1rem;
+	color: var(--color-neutral-1);
+	width: 50rem;
+	height: fit-content;
+	align-self: flex-end;
+	position: relative;
+
+	> p {
+		margin-bottom: 1.2rem;
+	}
+
+	span {
+		font-weight: 700;
+	}
+}
+
+///////////////////
+/// INPUT RANGE ///
+///////////////////
+.range {
+	width: 100%;
+	margin-bottom: 0.6rem;
+}
+
+.scale {
+	display: flex;
+	justify-content: space-between;
+	font-size: 1.2rem;
+}
+
+///////////////////////////
+/// WINDOW WITH GB LEFT ///
+///////////////////////////
+.storage-left {
+	position: absolute;
+	right: 3.2rem;
+	top: -5rem;
+	padding: 1.4rem;
+	border-radius: 1rem;
+	border-bottom-right-radius: 0;
+	background-color: #fff;
+	font-weight: 700;
+	font-size: 1.2rem;
+	text-transform: uppercase;
+	color: var(--color-neutral-2);
+	z-index: 111;
+
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+
+	> span {
+		font-size: 4.4rem;
+		color: var(--color-neutral-4);
+	}
+
+	&::after {
+		z-index: -1;
+		content: "";
+		position: absolute;
+		bottom: -2.4rem;
+		right: 0;
+		height: 6.4rem;
+		width: 6.4rem;
+		background-color: #fff;
+		clip-path: polygon(100% 0, 0 0, 100% 100%);
+	}
 }

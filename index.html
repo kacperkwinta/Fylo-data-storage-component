@@ -39,7 +39,15 @@
 					</div>
 				</div>
 				<!-- BOX WITH STORAGE STATUS -->
-				<div class="box-storage"></div>
+				<div class="box-storage">
+					<p>You've used <span id="usedGB">815 GB</span> of your storage</p>
+					<input type="range" min="0" max="1000" step="1" class="range" value="815" />
+					<div class="scale">
+						<span>0 GB</span>
+						<span>1000 GB</span>
+					</div>
+					<div class="storage-left"><span id="emptyGB">185</span> GB left</div>
+				</div>
 			</div>
 		</main>
 
@@ -47,5 +55,7 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div> -->
+
+		<script src="js/script.js"></script>
 	</body>
 </html>
