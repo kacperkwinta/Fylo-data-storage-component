@@ -52,14 +52,14 @@ main {
 	box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
 		rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 
+	.wrapper {
+		display: flex;
+		gap: 1.6rem;
+	}
+
 	> img {
 		margin-bottom: 2.4rem;
 	}
-}
-
-.wrapper {
-	display: flex;
-	gap: 1.6rem;
 }
 
 .icon-box {
@@ -112,6 +112,13 @@ main {
 	span {
 		font-weight: 700;
 	}
+
+	.wrapper {
+		position: relative;
+		background-color: var(--color-neutral-4);
+		border-radius: 1rem;
+		padding: 2px;
+	}
 }
 
 ///////////////////
@@ -119,10 +126,101 @@ main {
 ///////////////////
 .range {
 	width: 100%;
+	height: 0;
 	margin-bottom: 0.6rem;
+	cursor: pointer;
+	position: relative;
+	z-index: 20;
+}
+
+.bar {
+	position: absolute;
+	top: 2px;
+	left: 3px;
+	margin: 0 auto;
+	transform: translateY(px);
+	width: 99%;
+	height: 1.4rem;
+	border-radius: 1rem;
+	overflow: hidden;
+	z-index: 10;
+}
+
+.fill {
+	width: 81.5%;
+	height: 100%;
+	border-radius: 1rem;
+	background-image: linear-gradient(
+		to right,
+		var(--color-primary-1),
+		var(--color-primary-2)
+	);
+}
+
+/* Chrome, Safari, Edge, Opera */
+.range::-webkit-slider-runnable-track {
+	-webkit-appearance: none;
+	appearance: none;
+	border-radius: 1rem;
+	height: 1.4rem;
+	width: 99%;
+}
+
+/* Chrome, Safari, Edge, Opera */
+.range::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	height: 1rem;
+	width: 1rem;
+	background-color: #fff;
+	border: none;
+	cursor: grab;
+	transform: translate(-5px, -6px);
+}
+
+/* Firefox */
+.range::-moz-range-track {
+	-moz-appearance: none;
+	appearance: none;
+	border-radius: 1rem;
+	height: 1.4rem;
+	width: 99%;
+}
+
+/* Firefox */
+.range::-moz-range-thumb {
+	-moz-appearance: none;
+	appearance: none;
+	height: 1rem;
+	width: 1rem;
+	background-color: #fff;
+	border: none;
+	cursor: grab;
+	transform: translate(-5px, 1px);
+}
+
+/* Edge */
+.range::-ms-track {
+	background: transparent;
+	border-color: transparent;
+	border-width: 12px 0;
+	color: transparent;
+	height: 1.4rem;
+	width: 99%;
+}
+
+/* Edge */
+.range::-ms-thumb {
+	height: 1rem;
+	width: 1rem;
+	background-color: #fff;
+	border: none;
+	cursor: grab;
+	transform: translateY(1px);
 }
 
 .scale {
+	margin-top: 1.2rem;
 	display: flex;
 	justify-content: space-between;
 	font-size: 1.2rem;
@@ -164,5 +262,42 @@ main {
 		width: 6.4rem;
 		background-color: #fff;
 		clip-path: polygon(100% 0, 0 0, 100% 100%);
+	}
+}
+
+@media (max-width: 56.25em) {
+	body {
+		background-image: url(../images/bg-mobile.png);
+		background-position-y: 0%;
+		background-size: cover;
+	}
+
+	main {
+		height: 2rem auto;
+		padding: 0 1.2rem;
+	}
+
+	.container {
+		flex-direction: column;
+		gap: 1.2rem;
+	}
+
+	.box-actions,
+	.box-storage {
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	.storage-left {
+		right: auto;
+		top: auto;
+		left: 0;
+		bottom: -1.2rem;
+		transform: translate(50%, 50%);
+		border-bottom-right-radius: 1rem;
+
+		&::after {
+			display: none;
+		}
 	}
 }

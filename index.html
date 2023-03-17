@@ -41,7 +41,19 @@
 				<!-- BOX WITH STORAGE STATUS -->
 				<div class="box-storage">
 					<p>You've used <span id="usedGB">815 GB</span> of your storage</p>
-					<input type="range" min="0" max="1000" step="1" class="range" value="815" />
+					<div class="wrapper">
+						<div class="bar">
+							<div class="fill"></div>
+						</div>
+						<input
+							type="range"
+							min="0"
+							max="1000"
+							step="1"
+							class="range"
+							value="815"
+						/>
+					</div>
 					<div class="scale">
 						<span>0 GB</span>
 						<span>1000 GB</span>
