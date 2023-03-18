@@ -117,7 +117,7 @@ main {
 		position: relative;
 		background-color: var(--color-neutral-4);
 		border-radius: 1rem;
-		padding: 2px;
+		padding: 1px;
 	}
 }
 
@@ -125,6 +125,10 @@ main {
 /// INPUT RANGE ///
 ///////////////////
 .range {
+	/* Hides the slider so that custom slider can be made */
+	-webkit-appearance: none;
+	appearance: none;
+
 	width: 100%;
 	height: 0;
 	margin-bottom: 0.6rem;
@@ -135,10 +139,9 @@ main {
 
 .bar {
 	position: absolute;
-	top: 2px;
+	top: 3px;
 	left: 3px;
 	margin: 0 auto;
-	transform: translateY(px);
 	width: 99%;
 	height: 1.4rem;
 	border-radius: 1rem;
@@ -164,6 +167,7 @@ main {
 	border-radius: 1rem;
 	height: 1.4rem;
 	width: 99%;
+	// transform: translateY(-7px);
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -175,7 +179,8 @@ main {
 	background-color: #fff;
 	border: none;
 	cursor: grab;
-	transform: translate(-5px, -6px);
+	border-radius: 10rem;
+	transform: translate(-3px, -1px);
 }
 
 /* Firefox */
@@ -196,7 +201,7 @@ main {
 	background-color: #fff;
 	border: none;
 	cursor: grab;
-	transform: translate(-5px, 1px);
+	transform: translate(-5px, 3px);
 }
 
 /* Edge */
@@ -265,6 +270,7 @@ main {
 	}
 }
 
+// BELOW 900 PX
 @media (max-width: 56.25em) {
 	body {
 		background-image: url(../images/bg-mobile.png);
@@ -274,11 +280,11 @@ main {
 
 	main {
 		height: 2rem auto;
-		padding: 0 1.2rem;
 	}
 
 	.container {
 		flex-direction: column;
+		align-items: center;
 		gap: 1.2rem;
 	}
 
@@ -289,15 +295,26 @@ main {
 	}
 
 	.storage-left {
-		right: auto;
-		top: auto;
-		left: 0;
-		bottom: -1.2rem;
-		transform: translate(50%, 50%);
+		width: 19rem;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, 65%);
 		border-bottom-right-radius: 1rem;
+
+		display: flex;
+		justify-content: center;
 
 		&::after {
 			display: none;
 		}
+	}
+}
+
+// BELOW 375 PX
+@media (max-width: 23.4375em) {
+	.box-actions,
+	.box-storage {
+		width: 90%;
+		margin: 0 auto;
 	}
 }
